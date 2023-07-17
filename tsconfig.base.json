@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-mf/shared/auth": ["libs/shared/auth/src/index.ts"]
+      "@nx-mf/shared/data-access/auth": ["libs/shared/data-access/auth/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

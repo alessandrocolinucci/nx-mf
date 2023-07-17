@@ -1,21 +1,8 @@
 import { CommonModule } from '@angular/common';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  ViewEncapsulation,
-} from '@angular/core';
-import {
-  FormControl,
-  FormGroup,
-  FormsModule,
-  ReactiveFormsModule,
-} from '@angular/forms';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { FormControl, FormsModule, NonNullableFormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { AuthService } from '@nx-mf/shared/data-access/auth';
 import { PasswordModule } from 'primeng/password';
-
-type LoginForm = {
-  email: FormControl<string>;
-  password: FormControl<string>;
-};
 
 @Component({
   selector: 'nx-mf-login',
@@ -23,16 +10,22 @@ type LoginForm = {
   imports: [CommonModule, FormsModule, ReactiveFormsModule, PasswordModule],
   templateUrl: './login.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  encapsulation: ViewEncapsulation.None,
-  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  loginForm: FormGroup = new FormGroup<LoginForm>({
-    email: new FormControl<string>('', { nonNullable: true }),
-    password: new FormControl<string>('', { nonNullable: true }),
+  private readonly formBuilder: NonNullableFormBuilder = inject(NonNullableFormBuilder);
+  private readonly authService: AuthService = inject(AuthService);
+
+  loginForm = this.formBuilder.group({
+    username: new FormControl<string>(''),
+    password: new FormControl<string>(''),
   });
 
-  login(): void {
-    console.log(this.loginForm.value);
+  isLoggedIn$ = this.authService.isUserLoggedIn$;
+
+  login() {
+    const credentials = this.loginForm.value;
+    if (credentials.username && credentials.password) {
+      this.authService.login(credentials.username, credentials.password);
+    }
   }
 }
