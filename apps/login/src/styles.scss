@@ -2,16 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
+@import './theme/base';
+@import './theme/primeng';
 
-html,
-body {
-  height: 100%;
-  width: 100%;
-}
+
