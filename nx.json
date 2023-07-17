@@ -33,7 +33,22 @@
       "unitTestRunner": "none"
     },
     "@nx/angular:component": {
-      "style": "scss"
+      "style": "none",
+      "standalone": true,
+      "changeDetection": "OnPush",
+      "skipTests": true
+    },
+    "@nx/angular:service": {
+      "skipTests": true
+    },
+    "@nx/angular:directive": {
+      "skipTests": true
+    },
+    "@nx/angular:pipe": {
+      "skipTests": true
+    },
+    "@nx/angular:guard": {
+      "skipTests": true
     }
   }
 }
