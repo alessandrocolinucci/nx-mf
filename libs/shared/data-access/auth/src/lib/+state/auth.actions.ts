@@ -1,9 +1,10 @@
 import { createAction, props } from '@ngrx/store';
+import { User } from '../models/user.model';
 
 const AUTH_SOURCE = '[Auth/API]';
 
 export const initAuth = createAction('[Auth/API] Init Auth');
-export const loadAuthSuccess = createAction('[Auth/API] Load Auth Success', props<{ auth: AuthEntity[] }>());
+export const loadAuthSuccess = createAction('[Auth/API] Load Auth Success', props<{ auth: User[] }>());
 export const loadAuthFailure = createAction('[Auth/API] Load Auth Failure', props<{ error: any }>());
 
 // login: '[Auth] Login',

@@ -1,6 +1,6 @@
 {
-  "name": "data-access-auth",
-  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "name": "shared-data-access-auth",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/shared/data-access/auth/src",
   "prefix": "nx-mf",
   "tags": ["scope:shared", "type:data-access"],
@@ -10,10 +10,7 @@
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "libs/shared/data-access/auth/**/*.ts",
-          "libs/shared/data-access/auth/**/*.html"
-        ]
+        "lintFilePatterns": ["libs/shared/data-access/auth/**/*.ts", "libs/shared/data-access/auth/**/*.html"]
       }
     }
   }
