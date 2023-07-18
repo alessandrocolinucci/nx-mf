@@ -1,23 +1,21 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-
-const USERNAME = 'admin';
-const PASSWORD = 'password';
+import { HttpClient } from '@angular/common/http';
+import { Injectable, inject } from '@angular/core';
+import { Observable, map } from 'rxjs';
+import { Credentials, User } from './models/user.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private isUserLoggedIn = new BehaviorSubject(false);
-  isUserLoggedIn$ = this.isUserLoggedIn.asObservable();
+  private readonly httpService = inject(HttpClient);
 
-  login(username: string, password: string): void {
-    if (username === USERNAME && password === PASSWORD) {
-      this.isUserLoggedIn.next(true);
-    }
-  }
-
-  logout() {
-    this.isUserLoggedIn.next(false);
+  login(credentials: Credentials): Observable<User | Error> {
+    const url = '/assets/mock/users.json';
+    return this.httpService.get<User[]>(url).pipe(
+      map((users: User[] | undefined) => {
+        const user = users?.find((u) => u.username === credentials.username && u.password === credentials.password);
+        return user || Error('Wrong credentials ❌');
+      })
+    );
   }
 }

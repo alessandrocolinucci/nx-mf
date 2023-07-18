@@ -1,13 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { FormControl, FormsModule, NonNullableFormBuilder, ReactiveFormsModule } from '@angular/forms';
-import { AuthFacade, Credentials } from '@nx-mf/shared/data-access/auth';
+import { AuthFacade, AuthModule, Credentials } from '@nx-mf/shared/data-access/auth';
 import { PasswordModule } from 'primeng/password';
 
 @Component({
   selector: 'nx-mf-login',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, PasswordModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, PasswordModule, AuthModule],
   templateUrl: './login.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

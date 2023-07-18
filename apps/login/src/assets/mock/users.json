@@ -5,6 +5,7 @@
     "username": "johndoe",
     "email": "johndoe@example.com",
     "phone": "123-456-7890",
+    "password": "8kWQnY9dA3",
     "token": "abCDefGhIjKlmnoPqrstUvwxYz123456"
   },
   {
@@ -13,6 +14,7 @@
     "username": "janesmith",
     "email": "janesmith@example.com",
     "phone": "987-654-3210",
+    "password": "j7XpTn2oKb",
     "token": "lmnOpqrstUvwxYz1234567890AbcDef"
   },
   {
@@ -21,6 +23,7 @@
     "username": "alexjohnson",
     "email": "alexjohnson@example.com",
     "phone": "555-123-4567",
+    "password": "Gm4HfR1qZp0",
     "token": "UVWXyz1234567890AbcDefGhIjKlmno"
   },
   {
@@ -29,6 +32,7 @@
     "username": "emilybrown",
     "email": "emilybrown@example.com",
     "phone": "111-222-3333",
+    "password": "Y5dNvE6cUf",
     "token": "1234567890AbcDefGhIjKlmnoPqrstUv"
   },
   {
@@ -37,6 +41,7 @@
     "username": "michaelwilson",
     "email": "michaelwilson@example.com",
     "phone": "444-555-6666",
+    "password": "iL3RtA2wDx",
     "token": "GhIjKlmnoPqrstUvwxYz1234567890AbcD"
   },
   {
@@ -45,6 +50,7 @@
     "username": "sarahdavis",
     "email": "sarahdavis@example.com",
     "phone": "777-888-9999",
+    "password": "V9cKbZ1jLm",
     "token": "KlmnoPqrstUvwxYz1234567890AbcDefGhI"
   },
   {
@@ -53,6 +59,7 @@
     "username": "robertjohnson",
     "email": "robertjohnson@example.com",
     "phone": "666-777-8888",
+    "password": "F2sGkW8vQp",
     "token": "PqrstUvwxYz1234567890AbcDefGhIjKlmn"
   },
   {
@@ -61,6 +68,7 @@
     "username": "jessicamartinez",
     "email": "jessicamartinez@example.com",
     "phone": "222-333-4444",
+    "password": "hA4bYp7L6S",
     "token": "noPqrstUvwxYz1234567890AbcDefGhIjKl"
   },
   {
@@ -69,6 +77,7 @@
     "username": "davidthompson",
     "email": "davidthompson@example.com",
     "phone": "999-888-7777",
+    "password": "Cn6TgX3rEj",
     "token": "mnoPqrstUvwxYz1234567890AbcDefGhIjKl"
   },
   {
@@ -77,6 +86,7 @@
     "username": "jenniferwilson",
     "email": "jenniferwilson@example.com",
     "phone": "444-333-2222",
+    "password": "W1zRmS5yLg",
     "token": "PqrstUvwxYz1234567890AbcDefGhIjKlmno"
   }
 ]
