@@ -5,6 +5,7 @@
   "scripts": {
     "start:all": "nx run home:serve --devRemotes='dashboard,login'",
     "start:host": "nx run home:serve",
+    "start:login": "nx run login:serve",
     "build:host": "nx run home:build"
   },
   "private": true,
