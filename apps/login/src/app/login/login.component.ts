@@ -16,8 +16,8 @@ export class LoginComponent {
   private readonly authFacade: AuthFacade = inject(AuthFacade);
 
   loginForm = this.formBuilder.group({
-    username: new FormControl<string>(''),
-    password: new FormControl<string>(''),
+    username: new FormControl<string>('johndoe'),
+    password: new FormControl<string>('8kWQnY9dA3'),
   });
 
   login() {

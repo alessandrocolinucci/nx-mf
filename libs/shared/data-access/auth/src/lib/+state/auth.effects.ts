@@ -1,4 +1,5 @@
 import { Injectable, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { map, switchMap, tap } from 'rxjs';
 import { AuthActions, AuthService, User } from '../..';
@@ -7,6 +8,7 @@ import { AuthActions, AuthService, User } from '../..';
 export class AuthEffects {
   private readonly actions$ = inject(Actions);
   private readonly authService = inject(AuthService);
+  private readonly router = inject(Router);
 
   login$ = createEffect(() => {
     return this.actions$.pipe(
@@ -15,7 +17,8 @@ export class AuthEffects {
         return this.authService.login(credentials).pipe(
           map((user: User | Error) => {
             if (user instanceof Error) {
-              return AuthActions.loginFailure({ error: user });
+              const error = user;
+              return AuthActions.loginFailure({ error });
             }
 
             return AuthActions.loginSuccess({ user });
@@ -29,7 +32,10 @@ export class AuthEffects {
     () => {
       return this.actions$.pipe(
         ofType(AuthActions.loginSuccess),
-        tap(({ user }) => console.log('Show Notification', user))
+        tap(({ user }) => {
+          console.log('Show Notification', user);
+          this.router.navigate(['/']);
+        })
       );
     },
     { dispatch: false }

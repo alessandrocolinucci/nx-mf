@@ -1,5 +1,6 @@
 {
   "name": "home",
+  "implicitDependencies": ["login"],
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "nx-mf",

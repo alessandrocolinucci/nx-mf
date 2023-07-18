@@ -5,7 +5,9 @@ import * as AuthActions from './auth.actions';
 import * as AuthSelectors from './auth.selectors';
 import { AuthState } from './auth.state';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class AuthFacade {
   private readonly store$ = inject(Store<AuthState>);
 

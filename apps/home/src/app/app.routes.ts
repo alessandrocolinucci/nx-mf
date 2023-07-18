@@ -1,17 +1,15 @@
 import { Route } from '@angular/router';
+import { authGuard } from '@nx-mf/shared/data-access/auth';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 export const appRoutes: Route[] = [
   {
     path: '',
-    redirectTo: 'dashboard',
-    pathMatch: 'full',
-  },
-  {
-    path: 'dashboard',
-    loadChildren: () => import('dashboard/Routes').then((m) => m.remoteRoutes),
+    canActivate: [authGuard],
+    component: DashboardComponent,
   },
   {
     path: 'login',
-    loadChildren: () => import('login/Routes').then((m) => m.remoteRoutes),
+    loadChildren: () => import('login/Routes').then((m) => m.appRoutes),
   },
 ];

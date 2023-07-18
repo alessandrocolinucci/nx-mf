@@ -7,7 +7,7 @@ export const initAuth = createAction(AUTH_SOURCE + ' Init Auth');
 
 export const login = createAction(AUTH_SOURCE + ' Login', props<{ credentials: Credentials }>());
 export const loginSuccess = createAction(AUTH_SOURCE + ' Login Success', props<{ user: User }>());
-export const loginFailure = createAction(AUTH_SOURCE + ' Login Failure', props<{ error: any }>());
+export const loginFailure = createAction(AUTH_SOURCE + ' Login Failure', props<{ error: Error }>());
 
 export const logout = createAction(AUTH_SOURCE + ' Logout');
 export const logoutSuccess = createAction(AUTH_SOURCE + ' Logout Success');
